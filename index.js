@@ -4,6 +4,8 @@ require("dotenv").config();
 const web = require("./routes/web.js");
 const categoryroute = require("./routes/CategoryRoutes.js");
 const port = process.env.PORT;
+const catroute = require("./routes/catroute.js");
+
 require(`./database/connection.js`);
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
@@ -11,3 +13,4 @@ app.listen(port, () => {
 console.log(process.env.PORT);
 app.use(web);
 app.use("/category", categoryroute);
+app.use("/cat", catroute);
